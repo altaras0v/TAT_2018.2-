@@ -14,7 +14,7 @@ namespace ClassTask1
                 for (int i = 0; i < 9; i++)                   //fill the stack
                {
                     myStack.push(i + 5);
-                }
+               }
                    
                 if (!(myStack.emptyStack()))             
                 myStack.pop();                                // delete element
