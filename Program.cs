@@ -6,7 +6,6 @@ namespace ConsoleApp2
     {
         public static void Main(string[] args)
         {
-             Console.WriteLine("If your data is more than one word, please use quotes \" \"\n");
 
             for (int i = 0; i < args.Length; i++)
             {
