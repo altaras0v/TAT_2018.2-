@@ -17,7 +17,7 @@ namespace RadixConverter
             var actual = converter.ToNewBaseConverter(maxValueInt, numberNewSystemRadix);
 
             //Assert
-            Assert.AreEqual("1111111111111111111111111111111", actual);
+            Assert.AreEqual("21474836470000000000", actual);
         }
 
         [Test()]
@@ -32,7 +32,7 @@ namespace RadixConverter
             var actual = converter.ToNewBaseConverter(maxValueInt, numberNewSystemRadix);
 
             //Assert
-            Assert.AreEqual("10000000000000000000000000000000", actual);
+            Assert.AreEqual("21474836470000000000", actual);
         }
 
         [Test()]
@@ -40,14 +40,14 @@ namespace RadixConverter
         {
             //Arrange
             var converter = CreateObjectNumberConverter();
-            const int number = 56;
+            const int number = 2;
             const int numberNewSystemRadix = 10;
 
             //Act
             var actual = converter.ToNewBaseConverter(number, numberNewSystemRadix);
 
             //Assert
-            Assert.AreEqual("56", actual);
+            Assert.AreEqual("2", actual);
         }
 
         [Test()]
@@ -55,14 +55,14 @@ namespace RadixConverter
         {
             //Arrange
             var converter = CreateObjectNumberConverter();
-            const int number = 156;
+            const int number = 100;
             const int numberNewSystemRadix = 2;
 
             //Act
             var actual = converter.ToNewBaseConverter(number, numberNewSystemRadix);
 
             //Assert
-            Assert.AreEqual("10011100", actual);
+            Assert.AreEqual("1100100", actual);
         }
 
         [Test()]
@@ -70,14 +70,14 @@ namespace RadixConverter
         {
             //Arrange
             var converter = CreateObjectNumberConverter();
-            const int number = -156;
+            const int number = -100;
             const int numberNewSystemRadix = 2;
 
             //Act
             var actual = converter.ToNewBaseConverter(number, numberNewSystemRadix);
 
             //Assert
-            Assert.AreEqual("10011100", actual);
+            Assert.AreEqual("1100100", actual);
         }
 
         [Test()]
@@ -85,14 +85,14 @@ namespace RadixConverter
         {
             //Arrange
             var converter = CreateObjectNumberConverter();
-            const int number = 355;
+            const int number = 999;
             const int numberNewSystemRadix = 20;
 
             //Act
             var actual = converter.ToNewBaseConverter(number, numberNewSystemRadix);
 
             //Assert
-            Assert.AreEqual("HF", actual);
+            Assert.AreEqual("29J", actual);
         }
 
         [Test()]
@@ -101,7 +101,7 @@ namespace RadixConverter
             //Arrange
             var converter = CreateObjectNumberConverter();
             const int number = 0;
-            const int numberNewSystemRadix = 2;
+            const int numberNewSystemRadix = 10;
 
             //Act
             var actual = converter.ToNewBaseConverter(number, numberNewSystemRadix);
@@ -115,14 +115,14 @@ namespace RadixConverter
         {
             //Arrange
             var converter = CreateObjectNumberConverter();
-            const int number = 123;
-            const int numberNewSystemRadix = 4;
+            const int number = 1000;
+            const int numberNewSystemRadix = 7;
 
             //Act
             var actual = converter.ToNewBaseConverter(number, numberNewSystemRadix);
 
             //Assert
-            Assert.AreEqual("1323", actual);
+            Assert.AreEqual("2626", actual);
         }
 
         [Test()]
@@ -130,14 +130,14 @@ namespace RadixConverter
         {
             //Arrange
             var converter = CreateObjectNumberConverter();
-            const int number = 123;
+            const int number = 1001;
             const int numberNewSystemRadix = 3;
 
             //Act
             var actual = converter.ToNewBaseConverter(number, numberNewSystemRadix);
 
             //Assert
-            Assert.AreEqual("11120", actual);
+            Assert.AreEqual("1101002", actual);
         }
 
         private CoverterToNewSystem CreateObjectNumberConverter()
