@@ -18,7 +18,7 @@ namespace WebDriverTask
 
 
             elementEmail.SendKeys("375296655456");
-            elementPassword.SendKeys("SaveMYSoul1998");
+            elementPassword.SendKeys("password");
             loginButton.Click();
 
            driver.Navigate().GoToUrl("https://vk.com/im");
