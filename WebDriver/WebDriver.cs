@@ -1,5 +1,6 @@
-﻿using System;
+using System;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium.Chrome;
 
 namespace WebDriverTask
@@ -9,20 +10,30 @@ namespace WebDriverTask
         public void WebDrive()
         {
             ChromeDriver driver = new ChromeDriver();
-            driver.Navigate().GoToUrl("https://www.facebook.com/login/");
+
+            driver.Navigate().GoToUrl("https://vk.com/login");
             var elementEmail = driver.FindElement(By.Id("email"));
             var elementPassword = driver.FindElement(By.Id("pass"));
-            var loginButton = driver.FindElement(By.Id("loginbutton"));
+            var loginButton = driver.FindElement(By.Id("login_button"));
 
 
-            elementEmail.SendKeys("altaras0b@gmail.com");
-            elementPassword.SendKeys("idNM7x01");
+            elementEmail.SendKeys("375296655456");
+            elementPassword.SendKeys("SaveMYSoul1998");
             loginButton.Click();
 
-            driver.Navigate().GoToUrl("https://www.facebook.com/messages/");
+           driver.Navigate().GoToUrl("https://vk.com/im");
 
-            var unreadMessages = driver.FindElementsByClassName("_1ht5 _2il3 _5l-3 _3itx");
+            var unreadMessage = driver.FindElement(By.Id("ui_rmenu_unread"));
+            unreadMessage.Click();
+            var messagesList = driver.FindElementsByClassName("nim-dialog--text-preview");
+            var myUnreadMessage = new System.Text.StringBuilder();
 
+        
+            foreach (var i in messagesList)
+            {
+              
+                Console.WriteLine(myUnreadMessage.Append(i.Text+'\n'));
+            }
         }
     }
 }
